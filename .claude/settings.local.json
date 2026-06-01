@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git config *)",
+      "Bash(git *)",
+      "Bash(gh auth *)",
+      "Read(//c/Users/2026/**)",
+      "Bash(winget install *)",
+      "Bash(ssh-keygen *)",
+      "Bash(ssh *)"
+    ]
+  }
+}

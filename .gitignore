@@ -1,0 +1,7 @@
+# Claude Code
+.claude/scheduled_tasks.json
+.claude/worktrees/
+
+# OS
+Thumbs.db
+.DS_Store
