@@ -2,33 +2,75 @@ package com.life.app.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-// 主色（蓝）—— Material 3 蓝系
-val BluePrimary = Color(0xFF1976D2)
-val BluePrimaryDark = Color(0xFF0D47A1)
-val BlueSecondary = Color(0xFF42A5F5)
-val BlueOnPrimary = Color(0xFFFFFFFF)
-val BlueTertiary = Color(0xFF7E57C2)
+// ── 暖琥珀主色（Primary） ──
+val AmberLight = Color(0xFFFFF1E6)
+val AmberBase = Color(0xFFF5A623)
+val AmberDark = Color(0xFFC17D11)
+val AmberDeep = Color(0xFF835500)
+val AmberOnPrimary = Color(0xFFFFFFFF)
 
-// 浅色背景
-val SurfaceWhite = Color(0xFFFFFFFF)
-val SurfaceLight = Color(0xFFF8FAFC)
-val SurfaceSoftBlue = Color(0xFFF0F7FF)
+// ── 薄暮蓝辅助色（Secondary） ──
+val DuskLight = Color(0xFFEBF0F7)
+val DuskBase = Color(0xFF6B8DB5)
+val DuskDark = Color(0xFF3D5A80)
 
-// 文字
-val TextPrimary = Color(0xFF1F2937)
-val TextSecondary = Color(0xFF6B7280)
-val TextTertiary = Color(0xFF9CA3AF)
-val TextOnBlue = Color(0xFFFFFFFF)
+// ── 中性暖灰（Neutral） ──
+val WarmBg = Color(0xFFFBF9F6)
+val WarmCard = Color(0xFFFFFFFF)
+val WarmSurface = Color(0xFFF2EFEC)
+val WarmSurfaceHigh = Color(0xFFEFE6E2)
+val WarmOutline = Color(0xFFB8B0A8)
+val WarmOutlineVariant = Color(0xFFD7C3AE)
+val WarmText2nd = Color(0xFF5C5550)
+val WarmTextMain = Color(0xFF2C2825)
+val WarmInverseSurface = Color(0xFF34302C)
 
-// 边框 / 分隔线
-val BorderLight = Color(0xFFE5E7EB)
-val BorderTimeline = Color(0xFFE2E8F0)
+// ── 语义色 ──
+val SuccessMuted = Color(0xFF7FB069)
+val ErrorWarm = Color(0xFFD4786E)
+val ErrorContainer = Color(0xFFFFDAD6)
+val InfoMuted = Color(0xFF7BA7C9)
 
-// AI 卡片
-val AiCardBg = Color(0xFFEFF6FF)
-val AiCardText = Color(0xFF1E40AF)
+// ── AI 卡片（琥珀系） ──
+val AiCardBg = Color(0xFFFFF5EB)
+val AiCardText = Color(0xFF835500)
 
-// 状态色
-val SuccessGreen = Color(0xFF10B981)
-val WarningOrange = Color(0xFFF59E0B)
-val ErrorRed = Color(0xFFEF4444)
+// ── 兼容旧引用 ──
+@Deprecated("Use AmberBase", ReplaceWith("AmberBase"))
+val BluePrimary = AmberBase
+@Deprecated("Use AmberDark", ReplaceWith("AmberDark"))
+val BluePrimaryDark = AmberDark
+@Deprecated("Use DuskBase", ReplaceWith("DuskBase"))
+val BlueSecondary = DuskBase
+@Deprecated("Use AmberOnPrimary", ReplaceWith("AmberOnPrimary"))
+val BlueOnPrimary = AmberOnPrimary
+@Deprecated("Use DuskDark", ReplaceWith("DuskDark"))
+val BlueTertiary = DuskDark
+
+@Deprecated("Use WarmCard", ReplaceWith("WarmCard"))
+val SurfaceWhite = WarmCard
+@Deprecated("Use WarmBg", ReplaceWith("WarmBg"))
+val SurfaceLight = WarmBg
+@Deprecated("Use AmberLight", ReplaceWith("AmberLight"))
+val SurfaceSoftBlue = AmberLight
+
+@Deprecated("Use WarmTextMain", ReplaceWith("WarmTextMain"))
+val TextPrimary = WarmTextMain
+@Deprecated("Use WarmText2nd", ReplaceWith("WarmText2nd"))
+val TextSecondary = WarmText2nd
+@Deprecated("Use WarmOutline", ReplaceWith("WarmOutline"))
+val TextTertiary = WarmOutline
+@Deprecated("Use AmberOnPrimary", ReplaceWith("AmberOnPrimary"))
+val TextOnBlue = AmberOnPrimary
+
+@Deprecated("Use WarmOutlineVariant", ReplaceWith("WarmOutlineVariant"))
+val BorderLight = WarmOutlineVariant
+@Deprecated("Use WarmOutline", ReplaceWith("WarmOutline"))
+val BorderTimeline = WarmOutline
+
+@Deprecated("Use SuccessMuted", ReplaceWith("SuccessMuted"))
+val SuccessGreen = SuccessMuted
+@Deprecated("Use AmberBase", ReplaceWith("AmberBase"))
+val WarningOrange = AmberBase
+@Deprecated("Use ErrorWarm", ReplaceWith("ErrorWarm"))
+val ErrorRed = ErrorWarm

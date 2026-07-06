@@ -4,14 +4,8 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-enum class Priority {
-    @SerialName("P0") P0,
-    @SerialName("P1") P1,
-    @SerialName("P2") P2;
-
-    val displayName: String get() = when (this) {
-        P0 -> "P0 最高优先级"
-        P1 -> "P1 中等优先级"
-        P2 -> "P2 一般优先级"
-    }
+enum class Priority(val label: String, val displayName: String) {
+    @SerialName("P0") P0("P0", "高优先"),
+    @SerialName("P1") P1("P1", "中优先"),
+    @SerialName("P2") P2("P2", "低优先")
 }

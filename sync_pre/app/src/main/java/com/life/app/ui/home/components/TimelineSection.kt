@@ -23,6 +23,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import com.life.app.domain.model.Schedule
 import com.life.app.domain.model.TimelineItem
 import com.life.app.ui.theme.ErrorRed
 import com.life.app.ui.theme.PriorityColors
@@ -35,7 +36,7 @@ import com.life.app.ui.theme.PriorityColors
 fun TimelineSection(
     items: List<TimelineItem>,
     onScheduleClick: (Long) -> Unit,
-    onConflictGroupClick: (List<Long>) -> Unit,
+    onConflictGroupClick: (List<Schedule>) -> Unit,
     modifier: Modifier = Modifier
 ) {
     Column(modifier = modifier.fillMaxWidth()) {

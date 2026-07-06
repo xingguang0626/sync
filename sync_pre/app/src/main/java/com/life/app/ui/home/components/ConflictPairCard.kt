@@ -32,18 +32,16 @@ import com.life.app.ui.theme.ErrorRed
 fun ConflictPairCard(
     schedules: List<Schedule>,
     onScheduleClick: (Long) -> Unit,
-    onConflictGroupClick: (List<Long>) -> Unit,
+    onConflictGroupClick: (List<Schedule>) -> Unit,
     modifier: Modifier = Modifier
 ) {
     require(schedules.size == 2) { "ConflictPairCard 必须是 2 个日程" }
-    val ids = schedules.map { it.id }
-
     Column(
         modifier = modifier
             .fillMaxWidth()
             .clip(RoundedCornerShape(12.dp))
             .background(MaterialTheme.colorScheme.errorContainer.copy(alpha = 0.4f))
-            .clickable { onConflictGroupClick(ids) }
+            .clickable { onConflictGroupClick(schedules) }
             .padding(12.dp)
     ) {
         // 顶部警示标签

@@ -13,9 +13,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.AutoAwesome
-import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
+import androidx.compose.material.icons.outlined.Psychology
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -30,21 +28,23 @@ import androidx.compose.ui.unit.sp
 import com.life.app.domain.model.Reminder
 import com.life.app.ui.theme.AiCardBg
 import com.life.app.ui.theme.AiCardText
+import com.life.app.ui.theme.AmberBase
+import com.life.app.ui.theme.WarmOutlineVariant
 
 @Composable
 fun ReminderCard(
     reminder: Reminder,
-    onAdoptSuggestion: () -> Unit,
-    onViewAdjustment: () -> Unit,
-    timestamp: String = "12:30",
+    onViewDetails: () -> Unit,
+    onEditSchedule: () -> Unit,
     modifier: Modifier = Modifier
 ) {
-    Card(
+    Surface(
         modifier = modifier
             .fillMaxWidth()
             .padding(horizontal = 16.dp, vertical = 8.dp),
         shape = RoundedCornerShape(16.dp),
-        colors = CardDefaults.cardColors(containerColor = AiCardBg)
+        color = AiCardBg,
+        border = BorderStroke(1.dp, WarmOutlineVariant.copy(alpha = 0.2f))
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
             Row(
@@ -52,23 +52,17 @@ fun ReminderCard(
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Icon(
-                    imageVector = Icons.Outlined.AutoAwesome,
+                    imageVector = Icons.Outlined.Psychology,
                     contentDescription = null,
                     tint = AiCardText,
                     modifier = Modifier.size(18.dp)
                 )
                 Spacer(Modifier.width(6.dp))
                 Text(
-                    text = "AI 提醒",
+                    text = "提醒",
                     style = MaterialTheme.typography.labelLarge,
                     color = AiCardText,
                     fontWeight = FontWeight.SemiBold
-                )
-                Spacer(Modifier.weight(1f))
-                Text(
-                    text = timestamp,
-                    style = MaterialTheme.typography.labelMedium,
-                    color = AiCardText.copy(alpha = 0.7f)
                 )
             }
             Spacer(Modifier.size(12.dp))
@@ -87,15 +81,16 @@ fun ReminderCard(
                     modifier = Modifier
                         .weight(1f)
                         .clip(RoundedCornerShape(20.dp))
-                        .clickable(onClick = onAdoptSuggestion),
-                    color = MaterialTheme.colorScheme.primary
+                        .clickable(onClick = onViewDetails),
+                    shape = RoundedCornerShape(20.dp),
+                    color = AmberBase
                 ) {
                     Box(
                         modifier = Modifier.padding(vertical = 10.dp),
                         contentAlignment = Alignment.Center
                     ) {
                         Text(
-                            text = reminder.suggestion ?: "采纳建议",
+                            text = "查看详细信息",
                             color = MaterialTheme.colorScheme.onPrimary,
                             fontWeight = FontWeight.SemiBold,
                             style = MaterialTheme.typography.labelLarge
@@ -106,7 +101,8 @@ fun ReminderCard(
                     modifier = Modifier
                         .weight(1f)
                         .clip(RoundedCornerShape(20.dp))
-                        .clickable(onClick = onViewAdjustment),
+                        .clickable(onClick = onEditSchedule),
+                    shape = RoundedCornerShape(20.dp),
                     color = AiCardBg,
                     border = BorderStroke(1.dp, AiCardText.copy(alpha = 0.3f))
                 ) {
@@ -115,7 +111,7 @@ fun ReminderCard(
                         contentAlignment = Alignment.Center
                     ) {
                         Text(
-                            text = "查看调整",
+                            text = "修改相关日程",
                             color = AiCardText,
                             fontWeight = FontWeight.SemiBold,
                             style = MaterialTheme.typography.labelLarge

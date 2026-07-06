@@ -11,11 +11,11 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.outlined.EventNote
 import androidx.compose.material.icons.filled.CalendarToday
 import androidx.compose.material.icons.outlined.AccountCircle
 import androidx.compose.material.icons.outlined.Assessment
 import androidx.compose.material.icons.outlined.EditNote
-import androidx.compose.material.icons.outlined.EventNote
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -55,7 +55,7 @@ fun BottomTabBar(
                 onClick = { onTabSelected(HomeTab.HOME) }
             )
             TabItem(
-                icon = Icons.Outlined.EventNote,
+                icon = Icons.AutoMirrored.Outlined.EventNote,
                 label = "计划",
                 selected = current == HomeTab.PLAN,
                 onClick = { onTabSelected(HomeTab.PLAN) }

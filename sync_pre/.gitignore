@@ -1,0 +1,62 @@
+# Built application files
+*.apk
+*.ap_
+*.aab
+
+# Files for the ART/Dalvik VM
+*.dex
+
+# Java class files
+*.class
+
+# Generated files
+bin/
+gen/
+out/
+build/
+
+# Gradle files
+.gradle/
+gradle-app.setting
+!gradle-wrapper.jar
+!**/src/main/**/gradle-wrapper.jar
+!**/src/test/**/gradle-wrapper.jar
+
+# Android Studio cache
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Local configuration
+local.properties
+
+# Proguard
+proguard/
+*.pro
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# lint results
+lint-results.xml
+lint-results.html
+
+# Crashlytics
+com_crashlytics_export_strings.xml
+crashlytics.properties
+
+# Firebase
+google-services.json
+
+# signing
+signing.properties
+
+# Python
+sync-logic/__pycache__/
+sync-logic/sync.db
+*.pyc

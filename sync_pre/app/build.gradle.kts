@@ -9,12 +9,12 @@ plugins {
 
 android {
     namespace = "com.life.app"
-    compileSdk = 34
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.life.app"
         minSdk = 26
-        targetSdk = 34
+        targetSdk = 36
         versionCode = 1
         versionName = "0.1.0"
 
@@ -24,8 +24,8 @@ android {
 
     buildTypes {
         debug {
-            // 模拟器用 10.0.2.2，真机改成电脑局域网 IP 后重 build
-            buildConfigField("String", "BASE_URL", "\"http://10.0.2.2:8800\"")
+            // 模拟器用 10.0.2.2，真机改成电脑局域网 IP 后重 build （192.168.1.101 是我的电脑 IP）
+            buildConfigField("String", "BASE_URL", "\"http://192.168.1.101:8800\"")
         }
         release {
             isMinifyEnabled = false
@@ -58,6 +58,7 @@ android {
 dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.lifecycle.runtime.compose)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
     implementation(libs.androidx.activity.compose)
 
@@ -79,9 +80,14 @@ dependencies {
     implementation(libs.ktor.client.android)
     implementation(libs.ktor.client.content.negotiation)
     implementation(libs.ktor.client.logging)
+    implementation(libs.ktor.client.websockets)
     implementation(libs.ktor.serialization.kotlinx.json)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.kotlinx.coroutines.android)
+
+    implementation(libs.vosk.android) { exclude(group = "net.java.dev.jna", module = "jna") }
+    implementation("net.java.dev.jna:jna:5.18.1@aar")
+    implementation(libs.okhttp)
 
     implementation(libs.material)
     testImplementation(libs.junit)

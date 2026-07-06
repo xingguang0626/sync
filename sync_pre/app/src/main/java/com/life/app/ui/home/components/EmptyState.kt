@@ -44,7 +44,7 @@ fun EmptyState(
             style = MaterialTheme.typography.titleMedium
         )
         Text(
-            text = "告诉 Life 你想做什么，我来帮你排进时间轴。",
+            text = "告诉 Sync 你想做什么，我来帮你排进时间轴。",
             style = MaterialTheme.typography.bodyMedium,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
             textAlign = TextAlign.Center

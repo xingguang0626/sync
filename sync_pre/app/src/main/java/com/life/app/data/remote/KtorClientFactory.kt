@@ -1,5 +1,6 @@
 package com.life.app.data.remote
 
+import com.life.app.BuildConfig
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.android.Android
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
@@ -9,6 +10,7 @@ import io.ktor.client.plugins.logging.Logging
 import io.ktor.http.ContentType
 import io.ktor.http.contentType
 import io.ktor.serialization.kotlinx.json.json
+import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.Json
 
 object KtorClientFactory {
@@ -19,6 +21,7 @@ object KtorClientFactory {
      *   release  → https://api.life.example.com
      * 真机调试时把 debug 的 IP 改成电脑局域网 IP 后重 build。
      */
+    @OptIn(ExperimentalSerializationApi::class)
     fun create(): HttpClient = HttpClient(Android) {
         install(ContentNegotiation) {
             json(Json {
@@ -35,6 +38,6 @@ object KtorClientFactory {
             url(BuildConfig.BASE_URL)
             contentType(ContentType.Application.Json)
         }
-        expectSuccess = true
+        expectSuccess = false
     }
 }

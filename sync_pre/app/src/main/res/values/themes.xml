@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- 浅色主题，AppCompat 用作 Activity 主题，实际渲染靠 Compose Theme.kt -->
-    <style name="Theme.Life" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Theme.Sync" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>
         <item name="android:windowLightStatusBar">true</item>

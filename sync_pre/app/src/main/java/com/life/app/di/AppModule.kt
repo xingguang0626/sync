@@ -1,6 +1,7 @@
 package com.life.app.di
 
-import com.life.app.data.mock.MockApi
+// 切回 Mock 数据时取消注释下面的 import
+// import com.life.app.data.mock.MockApi
 import com.life.app.data.remote.HomeApi
 import com.life.app.data.remote.KtorClientFactory
 import com.life.app.data.remote.KtorHomeApi
@@ -16,20 +17,16 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object AppModule {
 
-    /**
-     * 第一阶段：绑 MockApi（返回假数据）
-     * 第二阶段切真后端时，把下面 @Provides 注释掉，改用 KtorHomeApi 即可。
-     */
     @Provides
     @Singleton
     @Named("homeApi")
-    fun provideHomeApi(): HomeApi = MockApi()
+    fun provideHomeApi(client: HttpClient): HomeApi = KtorHomeApi(client)
 
-    // ⚠️ 第二阶段启用：把上面这行注释掉，改成下面这段
+    // 切回 Mock 数据时取消注释下面这行，并注释掉上面 KtorHomeApi 那行
     // @Provides
     // @Singleton
     // @Named("homeApi")
-    // fun provideHomeApi(client: HttpClient): HomeApi = KtorHomeApi(client)
+    // fun provideHomeApi(): HomeApi = MockApi()
 
     @Provides
     @Singleton

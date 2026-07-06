@@ -14,8 +14,8 @@ import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.Person
-import androidx.compose.material.icons.outlined.Tune
+import androidx.compose.material.icons.outlined.Spa
+import androidx.compose.material.icons.outlined.Timer
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -46,7 +46,7 @@ fun HomeTopBar(
         Column(modifier = Modifier.weight(1f)) {
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Text(
-                    text = "Life",
+                    text = "Sync",
                     fontWeight = FontWeight.Bold,
                     fontSize = 32.sp,
                     color = MaterialTheme.colorScheme.onBackground
@@ -87,8 +87,8 @@ fun HomeTopBar(
             )
         }
         Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-            CircleIconButton(icon = Icons.Outlined.Person, label = "生活管家", onClick = onClickLifestyle)
-            CircleIconButton(icon = Icons.Outlined.Tune, label = "预设模式", onClick = onClickPreset)
+            CircleIconButton(icon = Icons.Outlined.Spa, label = "生活管家", onClick = onClickLifestyle)
+            CircleIconButton(icon = Icons.Outlined.Timer, label = "预设模式", onClick = onClickPreset)
         }
     }
 }

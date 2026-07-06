@@ -1,6 +1,8 @@
 package com.life.app.ui.home.components
 
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.outlined.EventNote
+import androidx.compose.material.icons.automirrored.outlined.MenuBook
 import androidx.compose.material.icons.outlined.*
 import androidx.compose.ui.graphics.vector.ImageVector
 import com.life.app.domain.model.Schedule
@@ -18,7 +20,7 @@ object ScheduleIcons {
             "午餐" in t || "午饭" in t -> Icons.Outlined.Restaurant
             "晚餐" in t || "晚饭" in t || "吃饭" in t -> Icons.Outlined.Restaurant
 
-            "晨间阅读" in t || "晚读" in t || "阅读" in t || "读书" in t -> Icons.Outlined.MenuBook
+            "晨间阅读" in t || "晚读" in t || "阅读" in t || "读书" in t -> Icons.AutoMirrored.Outlined.MenuBook
 
             "健身" in t || "运动" in t || "跑步" in t -> Icons.Outlined.FitnessCenter
             "哑铃" in t -> Icons.Outlined.FitnessCenter
@@ -40,7 +42,7 @@ object ScheduleIcons {
 
             "背单词" in t -> Icons.Outlined.Translate
 
-            else -> Icons.Outlined.EventNote
+            else -> Icons.AutoMirrored.Outlined.EventNote
         }
     }
 }
